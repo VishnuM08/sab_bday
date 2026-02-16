@@ -1,0 +1,372 @@
+:root {
+    --primary-color: #FFD1DC; /* Pastel Pink */
+    --secondary-color: #E0F7FA; /* Pastel Blue */
+    --accent-color: #FFB7B2;
+    --text-color: #5D5D5D;
+    --bg-gradient: linear-gradient(135deg, #FFD1DC 0%, #E0F7FA 100%);
+    --font-main: 'Quicksand', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background: var(--bg-gradient);
+    /* Removed complex animated background as requested */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Removed @keyframes gradientBG */
+
+/* Glassmorphism Card Style */
+.content {
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px; /* More rounded */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+}
+
+.content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: block;
+    max-height: 450px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.date {
+    font-size: 0.85rem;
+    color: #FF6F61; /* Accent color for date */
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #444;
+}
+#landing-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    background: white; /* Overlay or solid background for focus */
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.landing-content h1 {
+    font-size: 3rem;
+    color: #FF6F61;
+    margin-bottom: 20px;
+}
+
+.wishes, .sub-wishes {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#go-memories-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-family: var(--font-main);
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+#go-memories-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 111, 97, 0.6);
+}
+
+/* Animations */
+.floating-elements span {
+    position: absolute;
+    bottom: -50px;
+    font-size: 3rem;
+    animation: floatUp 10s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-110vh) rotate(360deg); }
+}
+
+/* Timeline */
+#main-content {
+    animation: fadeIn 1s ease-in-out;
+    padding-bottom: 50px;
+}
+
+.timeline-header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.narrative p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #fff;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '❤';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -12.5px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #FF9F55;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.right::after {
+    left: -12.5px;
+}
+
+/* Content styles updated in body block replacement above or effectively replaced here if I target it right. 
+   Wait, I replaced 'body' block but I also included .content in the replacement content. 
+   The TargetContent in the previous call was just the 'body' block.
+   So I might have inserted .content styles AT THE TOP. 
+   I should remove the OLD .content styles to avoid duplication CSS cascade issues. 
+*/
+.content {
+    /* Old styles removed/overridden by upper block, but let's clear this to avoid confusion */
+    /* Keeping empty or minimal if I want to just rely on the top, but better to Replace this block with the new styles properly in place */
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    position: relative;
+}
+
+.content img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    .timeline-container {
+        padding: 10px;
+    }
+
+    .timeline-container::after {
+        left: 20px; /* More compact line position */
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px; /* Reduced padding */
+        padding-right: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .timeline-item::before {
+        left: 40px; /* Adjusted arrow */
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    .left::after, .right::after {
+        left: 7.5px; /* aligned with line at 20px - (25px/2) + correction */
+    }
+    
+    .right {
+        left: 0%;
+    }
+
+    .landing-content h1 {
+        font-size: 2.5rem; /* Slightly larger than before but fits */
+        padding: 0 10px;
+    }
+
+    .wishes {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .timeline-header {
+        padding: 30px 10px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+}
+
+/* Enhanced Animations & Styles */
+
+/* Button Pulse */
+#go-memories-btn {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(255, 111, 97, 0.7); }
+    100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4); }
+}
+
+/* Timeline Item Hover */
+.content {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+}
+
+.content:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+/* Image Hover */
+.content img {
+    transition: transform 0.5s ease;
+}
+
+.content:hover img {
+    transform: scale(1.02);
+}
+
+/* Gradient Text for Header */
+.landing-content h1, .timeline-header h2 {
+    background: linear-gradient(to right, #FF6F61, #FF9F55);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* More Floating Elements */
+.floating-elements span:nth-child(1) { left: 10%; animation-duration: 15s; font-size: 2rem; }
+.floating-elements span:nth-child(2) { left: 30%; animation-duration: 25s; font-size: 1.5rem; animation-delay: 5s; }
+.floating-elements span:nth-child(3) { left: 70%; animation-duration: 20s; font-size: 2.5rem; animation-delay: 2s; }
+
+/* Add more via pseudo-elements if needed, or JS will inject */
+
+/* Timeline Line Gradient */
+.timeline-container::after {
+    background: linear-gradient(180deg, #FFB7B2 0%, #E0F7FA 100%);
+    width: 6px;
+    margin-left: -3px;
+    box-shadow: 0 0 10px rgba(255, 183, 178, 0.5);
+}
+
+/* Heart Icon Animation */
+.timeline-item::after {
+    transition: transform 0.3s;
+}
+
+.timeline-item:hover::after {
+    transform: scale(1.3) rotate(360deg);
+    background-color: #FF6F61;
+    color: white;
+}
+

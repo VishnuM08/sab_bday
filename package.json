@@ -1,0 +1,14 @@
+{
+  "name": "birthday-timeline",
+  "version": "1.0.0",
+  "description": "Happy Birthday Timeline",
+  "scripts": {
+    "start": "npx serve .",
+    "build:data": "node scripts/generate-timeline.js"
+  },
+  "dependencies": {
+    "exif-parser": "^0.1.12",
+    "heic-convert": "^2.1.0",
+    "fs-extra": "^11.1.1"
+  }
+}

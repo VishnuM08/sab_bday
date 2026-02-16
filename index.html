@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sabari!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Landing Page -->
+    <div id="landing-page">
+        <div class="landing-content" data-aos="fade-zoom-in" data-aos-duration="1500">
+            <h1>Happy Birthday Sabari! 🎉</h1>
+            <p class="wishes">Wishing you a day filled with laughter, love, and unforgettable moments.</p>
+            <p class="sub-wishes">Here's to celebrating our journey and the amazing person you are!</p>
+            <button id="go-memories-btn">Go Memories 💖</button>
+        </div>
+        <div class="floating-elements">
+            <!-- Animated background elements -->
+            <span class="balloon">🎈</span>
+            <span class="balloon" style="left: 20%; animation-delay: 2s;">🎈</span>
+            <span class="confetti" style="left: 80%;">✨</span>
+            <span class="heart" style="left: 40%; animation-delay: 4s;">💖</span>
+            <span class="star" style="left: 60%; animation-delay: 1s;">⭐</span>
+            <span class="confetti" style="left: 10%; animation-delay: 6s;">🎉</span>
+            <span class="heart" style="left: 90%; animation-delay: 3s;">💞</span>
+        </div>
+    </div>
+
+    <!-- Main Timeline Content (Hidden initially) -->
+    <main id="main-content" style="display: none;">
+        <header class="timeline-header">
+            <h2>Our Journey</h2>
+            <div class="narrative">
+                <p>It all started during our internship...</p>
+                <p>Almost 3 years of friendship, growth, and memories.</p>
+            </div>
+        </header>
+
+        <section class="timeline-container" id="timeline">
+            <!-- Timeline items will be injected here by JS -->
+        </section>
+
+        <footer>
+            <p>To many more years of friendship! 🎂</p>
+        </footer>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
