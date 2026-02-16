@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Fetch and Render Timeline
-    fetch(`src/data.json?t=${new Date().getTime()}`)
+    fetch('public/data.json?t=${Date.now()}')
         .then(response => response.json())
         .then(data => {
             data.forEach((item, index) => {

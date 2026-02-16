@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const dataFile = path.join(__dirname, '../src/data.json');
+const dataFile = path.join(__dirname, '../public/data.json');
 
 const captions = [
     "Nanbanukku kovam varalam... aana dhrogham panna koodadhu! (Natpukkaga) 🤝",

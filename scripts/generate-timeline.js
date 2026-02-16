@@ -5,7 +5,7 @@ const heicConvert = require('heic-convert');
 
 const imagesDir = path.join(__dirname, '../public/images');
 const convertedDir = path.join(__dirname, '../public/images/converted'); // separate folder for converted
-const outputFile = path.join(__dirname, '../src/data.json');
+const outputFile = path.join(__dirname, '../public/data.json');
 
 // Regex patterns for filename dates
 const datePatterns = [
