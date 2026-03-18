@@ -1,0 +1,19 @@
+{
+  "name": "sabri-bday",
+  "version": "1.0.0",
+  "description": "Birthday celebration timeline for Sabari",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx serve .",
+    "generate": "node scripts/generate-timeline.js",
+    "captions": "node scripts/add-captions.js"
+  },
+  "dependencies": {
+    "exif-parser": "^0.1.12",
+    "fs-extra": "^11.1.1",
+    "heic-convert": "^1.2.4"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
